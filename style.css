@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+#container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #000;
+}
+
+#webcam {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Heavy, moody filter for surreal aesthetic */
+    filter: brightness(0.65) contrast(1.3) grayscale(0.4) saturate(0.7);
+}
+
+#canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+}
+
+/* Ensure no UI buttons or visible controls */
+video::-webkit-media-controls {
+    display: none;
+}
+
+video {
+    -webkit-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
+
+/* Pure white text for maximum contrast */
+body {
+    color: #fff;
+}
